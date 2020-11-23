@@ -2,8 +2,17 @@
 	max-width: $grid-width;
 	margin: 0 auto;
 
+	@include resp(tp){
+		max-width: $grid-width / 2.5;
+		padding: 0 2rem;
+	}
+
 	&:not(:last-child){
 		margin-bottom: $gutter-vertical;	
+
+		@include resp(tp){
+			margin-bottom: $gutter-vertical - 2;
+		}
 	}
 
 	@include clearfix;
@@ -13,6 +22,15 @@
 
 		&:not(:last-child){
 			margin-right: $gutter-horizontal;
+
+			@include resp(tp){
+				margin-right: 0;
+				margin-bottom: $gutter-vertical - 2;
+			}
+		}
+
+		@include resp(tp){
+			width: 98% !important;
 		}
 	}
 

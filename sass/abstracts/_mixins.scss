@@ -5,3 +5,34 @@
 		clear: both;
 	}
 }
+
+@mixin sethorizontal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+// MEDIA MANAGER
+/*
+600px mob
+900px tp
+1200px tl
+1800px big
+
+1em 16px
+*/
+@mixin resp($break) {
+	@if $break == mob {
+		@media (max-width:37.5em) { @content };
+	}
+	@if $break == tp {
+		@media (max-width:56.25em) { @content };
+	}
+	@if $break == tl {
+		@media (max-width:75em) { @content };
+	}
+	@if $break == big {
+		@media (min-width:112.5em) { @content };
+	}
+}
