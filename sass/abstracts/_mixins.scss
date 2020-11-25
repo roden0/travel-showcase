@@ -24,15 +24,15 @@
 */
 @mixin resp($break) {
 	@if $break == mob {
-		@media (max-width:37.5em) { @content };
+		@media only screen and (max-width:37.5em) { @content };
 	}
 	@if $break == tp {
-		@media (max-width:56.25em) { @content };
+		@media only screen and (max-width:56.25em) { @content };
 	}
 	@if $break == tl {
-		@media (max-width:75em) { @content };
+		@media only screen and (max-width:75em) { @content };
 	}
 	@if $break == big {
-		@media (min-width:112.5em) { @content };
+		@media only screen and (min-width:112.5em) { @content };
 	}
 }

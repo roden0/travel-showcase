@@ -18,7 +18,7 @@
         height: 95vh;
     }
 
-    @media (min-resolution: 192dpi) and (min-width: 37.5em),(min-width: 125em) {
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),(min-width: 125em) {
         background-image: 
             linear-gradient(
                 to right bottom, 
