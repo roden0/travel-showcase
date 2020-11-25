@@ -13,14 +13,34 @@
 		transform: skewX(12deg);
 	}
 
+	@include resp(tp){
+		width: 90%;
+		padding: 4rem;
+		padding-left: 2rem;
+	}
+
+	@include resp(mob){
+		width: 80%;
+		transform: skewX(0);
+		& > * {
+			transform: skewX(0);
+		}
+	}
+
 	&__shape {
 		position:relative;
 		width: 15rem;
 		height: 15rem;
 		float: left;
 		background-color:orangered;
-		shape-outside:circle(50% at 50% 50%);
-		clip-path: circle(50% at 50% 50%);
+		overflow:hidden;
+		border-radius: 50%;
+
+		@supports (clip-path: polygon(0 0)) or (shape-outside:circle(50% at 50% 50%)){
+			clip-path: circle(50% at 50% 50%);
+			shape-outside:circle(50% at 50% 50%);
+			border-radius: none;
+		}
 	}
 
 	&__image {
@@ -54,5 +74,9 @@
 
 	&__text {
 		transform: skewX(12deg) translateX(2rem);
+
+		@include resp(mob){
+			transform: skewX(0) translateX(2rem);
+		}
 	}
 }

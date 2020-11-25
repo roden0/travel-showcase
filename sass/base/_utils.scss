@@ -12,10 +12,16 @@
 
 .u-margin-b-l {
 	margin-bottom: 8rem !important;
+	@include resp(tp){
+		margin-bottom: 5rem !important;
+	}
 }
 
 .u-margin-b-m {
 	margin-bottom: 4rem !important;
+	@include resp(tp){
+		margin-bottom: 3rem !important;
+	}
 }
 
 .u-margin-b-s {

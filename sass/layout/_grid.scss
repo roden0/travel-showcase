@@ -3,7 +3,7 @@
 	margin: 0 auto;
 
 	@include resp(tp){
-		max-width: $grid-width / 2.5;
+		max-width: 80%;
 		padding: 0 2rem;
 	}
 

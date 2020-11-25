@@ -129,4 +129,46 @@
 		font-weight: 100;
 	}
 
+
+	@include resp(tp){
+		border-radius:  3%;
+		height: auto;
+		background-color: $color-white;
+		box-shadow:0 1.5rem 4rem rgba($color-black,.2);
+
+		&__side{
+			height: auto;
+			position: relative;
+			border-radius: .5rem;
+			box-shadow: none;
+
+			&--back{
+				transform: rotateY(0);
+				clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+			}
+		}
+
+		&:hover &__side--front{
+			transform: rotateY(0);
+		}
+
+
+		&__cta{
+			position: relative;
+			top: 0;
+			left: 0;
+			transform: translate(0);
+			width: 100%;
+			padding: 3rem;
+		}
+
+		&__price-box{
+			margin-bottom: 3rem;
+		}
+
+		&__price-amount{
+			font-size: $header-primary-size - 1;
+		}
+
+	}
 }

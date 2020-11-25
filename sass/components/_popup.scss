@@ -10,6 +10,11 @@
     visibility: hidden;
     transition: all .3s .2s;
 
+    @supports (backdrop-filter: blur(1rem)) or (-moz-backdrop-filter: blur(1rem)){
+        backdrop-filter: blur(1rem);
+        -moz-backdrop-filter: blur(1rem);
+        background-color: rgba($color-black, .3);
+    }
     
 
     &__content {
@@ -21,10 +26,19 @@
         display: table;
         overflow: hidden;
 
+        @include resp(mob){
+            display: block;
+            width: 95%;
+        }
+
         &-left {
             width: 33.33%;
             display: table-cell;
             vertical-align: middle;
+            
+            @include resp(mob){
+                display: none;
+            }
         }
 
         &-right {
@@ -32,6 +46,11 @@
             display: table-cell;
             vertical-align: middle;
             padding: 3rem 5rem;
+
+            @include resp(mob){
+                width: auto;
+                display: block;
+            }
         }
     }
 
